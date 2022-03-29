@@ -1,0 +1,8 @@
+N-Queen
+https://www.acmicpc.net/problem/9663
+
+부분수열의합
+https://www.acmicpc.net/workbook/view/845
+
+스도쿠
+https://www.acmicpc.net/problem/2580
