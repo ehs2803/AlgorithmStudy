@@ -4,30 +4,30 @@ using namespace std;
 int map[10][10];
 bool check_row[10][10];
 bool check_col[10][10];
-bool check_square[10][10];
+bool check_square[9][9];
 
 void dfs(int row, int col)
 {
-	// ´ä Ãâ·Â  
-    if(row==10){ // Å½»öÀÌ ¿Ï·áµÈ °æ¿ì  
+	// ë‹µ ì¶œë ¥  
+    if(row==10){ // íƒìƒ‰ì´ ì™„ë£Œëœ ê²½ìš°  
     	for(int i=1;i<=9;i++){
     		for(int j=1;j<=9;j++){
     			cout<<map[i][j]<<' ';
 			}
 			cout<<'\n';
 		}
-		exit(0); // ÇÁ·Î±×·¥ Á¾·á.  
+		exit(0); // í”„ë¡œê·¸ë¨ ì¢…ë£Œ.  
 	}
 	
-    if (map[row][col] == 0){ // ºóÄ­ÀÎ °æ¿ì  
-        for (int i = 1; i <= 9; i++){ // 1~9 ¼ıÀÚ ¸ğµÎ¸¦ ½ÃµµÇØº½.  
+    if (map[row][col] == 0){ // ë¹ˆì¹¸ì¸ ê²½ìš°  
+        for (int i = 1; i <= 9; i++){ // 1~9 ìˆ«ì ëª¨ë‘ë¥¼ ì‹œë„í•´ë´„.  
             if (check_row[row][i] == false && check_col[col][i] == false && check_square[((row-1) / 3) * 3 + ((col-1) / 3)][i] == false){ 
                 check_row[row][i] = true;
                 check_col[col][i] = true;
                 check_square[((row-1) / 3) * 3 + ((col-1) / 3)][i] = true;
                 map[row][col] = i;
                 
-                // ´ÙÀ½Ä­À¸·Î ³Ñ¾î°¡±â  
+                // ë‹¤ìŒì¹¸ìœ¼ë¡œ ë„˜ì–´ê°€ê¸°  
                 if(col==9) dfs(row+1,1);
     			else dfs(row, col+1);
     			
@@ -38,14 +38,14 @@ void dfs(int row, int col)
             }
         }
     }
-    else{ // ºóÄ­ÀÌ ¾Æ´Ñ °æ¿ì. ´ÙÀ½ Ä­À¸·Î ±×³É ³Ñ¾î°¨. 
+    else{ // ë¹ˆì¹¸ì´ ì•„ë‹Œ ê²½ìš°. ë‹¤ìŒ ì¹¸ìœ¼ë¡œ ê·¸ëƒ¥ ë„˜ì–´ê°. 
     	if(col==9) dfs(row+1,1);
     	else dfs(row, col+1);
 	}
 }
 
 int main(){
-	// ÀÔ·Â  
+	// ì…ë ¥  
 	for(int i=1;i<=9;i++){
 		for(int j=1;j<=9;j++) {
 			cin>>map[i][j];	
