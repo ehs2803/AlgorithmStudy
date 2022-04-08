@@ -14,9 +14,9 @@ int main(){
 	int ans = 0;
 	
 	for(int i=0;i<k;i++){
-		// ÀÌ¹Ì tab¿¡ ²ÈÇô ÀÖ´ÂÁö ¿©ºÎ È®ÀÎ  
+		// ì´ë¯¸ tabì— ê½‚í˜€ ìˆëŠ”ì§€ ì—¬ë¶€ í™•ì¸  
 		bool check = false;
-		for(int j=0;j<multiTab.size();j++){ // multiTab ±¸¸Û°³¼ö n°³¿¡ ´ëÇÏ¿©  
+		for(int j=0;j<multiTab.size();j++){ // multiTab êµ¬ë©ê°œìˆ˜ nê°œì— ëŒ€í•˜ì—¬  
 			if(multiTab[j]==schedule[i]){
 				check=true;
 				break;
@@ -24,16 +24,16 @@ int main(){
 		}
 		if(check) continue;
 		
-		// ºóÄ­ÀÌ ³²¾ÆÀÖ´ÂÁö È®ÀÎ 
+		// ë¹ˆì¹¸ì´ ë‚¨ì•„ìˆëŠ”ì§€ í™•ì¸ 
 		if(multiTab.size()<n){
-			multiTab.push_back(schedule[i]); // multiTab¿¡ ²Å±â  
+			multiTab.push_back(schedule[i]); // multiTabì— ê¼½ê¸°  
 			continue;
 		}
 		
-		// »¬ Àü±â¿ëÇ° Á¤ÇÏ±â - °¡Àå ¿À·§µ¿¾È »ç¿ë ¾ÈÇÏ´Â °Í or ¾ÕÀ¸·Î ¾Ê¾²ÀÏ °Í  Ã£±â  
-		// ±×¸®µğ  
+		// ëº„ ì „ê¸°ìš©í’ˆ ì •í•˜ê¸° - ê°€ì¥ ì˜¤ë«ë™ì•ˆ ì‚¬ìš© ì•ˆí•˜ëŠ” ê²ƒ or ì•ìœ¼ë¡œ ì•Šì“°ì¼ ê²ƒ  ì°¾ê¸°  
+		// ê·¸ë¦¬ë””  
 		int out_index=0; 
-		int last_use_index=0; 
+		int last_use_cnt=0; 
 		for(int j=0;j<multiTab.size();j++){
 			int cnt=0;
 			for(int m=i+1; m<k; m++){
@@ -42,16 +42,17 @@ int main(){
 				}
 				cnt++;
 			}
-			if(cnt>last_use_index){
+			if(cnt>last_use_cnt){
 				out_index=j;
-				last_use_index = cnt;
+				last_use_cnt = cnt;
 			}
 		}
 		multiTab.erase(multiTab.begin()+out_index);
-		ans++; // multiTab¿¡¼­ »Ì°í  
-		multiTab.push_back(schedule[i]); // »ç¿ëÇÒ Àü±â¿ëÇ° ²Å±â  
+		ans++; // multiTabì—ì„œ ë½‘ê³   
+		multiTab.push_back(schedule[i]); // ì‚¬ìš©í•  ì „ê¸°ìš©í’ˆ ê¼½ê¸°  
 		
 	}
 	
-	cout<<ans; // Á¤´ä Ãâ·Â  
+	cout<<ans; // ì •ë‹µ ì¶œë ¥  
+	
 }
