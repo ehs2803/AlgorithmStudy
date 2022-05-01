@@ -4,6 +4,7 @@
 #include<algorithm>
 using namespace std;
 
+
 int map[25][25]; // map  
 bool visited[25][25]; // 방문 여부  
 int n;

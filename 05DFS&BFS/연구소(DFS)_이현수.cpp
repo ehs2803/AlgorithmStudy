@@ -4,6 +4,7 @@
 #include<algorithm>
 using namespace std;
 
+
 int N,M;
 
 int lab[8][8]; // ¿¬±¸¼Ò   

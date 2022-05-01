@@ -3,6 +3,7 @@
 #include<algorithm> // fill
 using namespace std;
 
+
 int map[50][50]; // map 
 bool check[50][50]; // 방문 여부  
 
