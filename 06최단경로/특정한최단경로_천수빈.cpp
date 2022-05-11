@@ -1,4 +1,4 @@
-// Âü°í 
+// ì°¸ê³  
 // https://hyeo-noo.tistory.com/161 
 
 #include <iostream>
@@ -6,12 +6,12 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-#define INF 1e9+7//1001
+#define INF 1e9+7
 
 //typedef pair<int, int> p;
 #define p pair<int, int>
-int N, E; // (2 ¡ÂÁ¤Á¡N ¡Â 800, 0 ¡Â°£¼±E ¡Â 200,000) 
-int v1, v2; // ²À °ÅÃÄ¾ß ÇÏ´Â Á¤Á¡ 
+int N, E; // (2 â‰¤ì •ì N â‰¤ 800, 0 â‰¤ê°„ì„ E â‰¤ 200,000) 
+int v1, v2; // ê¼­ ê±°ì³ì•¼ í•˜ëŠ” ì •ì  
 vector<p> graph[801];
 vector<int> dist;
 
@@ -19,13 +19,13 @@ vector<int> dist;
 int dijkstra(int st, int ed){
 	dist = vector<int>(N+1, INF);
 	priority_queue<p, vector<p > , greater<p > >pq; 
-	// ÃÖ¼Ò°ªºÎÅÍ popÇÏ±â À§ÇÑ ÀÛ¾÷ 
+	// ìµœì†Œê°’ë¶€í„° popí•˜ê¸° ìœ„í•œ ì‘ì—… 
 	pq.push(make_pair(0, st));
 	
 	dist[st] = 0; 
 	
 	while(!pq.empty()){
-		int now = pq.top().second; // ÃÖ¼Ò°ª 
+		int now = pq.top().second; // ìµœì†Œê°’ 
 		int w = pq.top().first; 
 		pq.pop();
 		
