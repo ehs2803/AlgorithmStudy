@@ -30,11 +30,6 @@ void topologySort(){
          if(inDegree[next] == 0) q.push(next); // 진입차수 0일때 
       }
       
-//      for (int k=0;k<n;k++){
-//      	cout << "dp array : " << dp[k] << " ";
-//	  }
-//	  cout << endl;
-      
    }
    
    for (int i=1;i<=n;i++) 
