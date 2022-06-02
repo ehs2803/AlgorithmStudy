@@ -44,6 +44,6 @@ int main() {
 		// 나머지 
 		else
 			printf("%d\n", (hi - vc.begin()) - (lo - vc.begin()) + 1); 
-	}
+	} 
 	return 0;
 }
